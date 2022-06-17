@@ -19,7 +19,7 @@ Article.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    art_id: {
+    user_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
