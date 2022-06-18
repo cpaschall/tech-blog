@@ -1,4 +1,16 @@
 {
+  "name": "playground2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seeds": "node seeds/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.4",
@@ -7,24 +19,6 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.20.1"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "name": "tech-blog",
-  "description": "",
-  "version": "1.0.0",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cpaschall/tech-blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cpaschall/tech-blog/issues"
-  },
-  "homepage": "https://github.com/cpaschall/tech-blog#readme"
+    "sequelize": "^6.21.0"
+  }
 }

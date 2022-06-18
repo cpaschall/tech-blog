@@ -1,24 +1,47 @@
-<!-- Loop over each object in the articles array -->
-{{#each articles as |article| }}
-<div class="row mb-4 article">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
-      <a href="/article/{{article.id}}">{{article.title}}</a>
-    </h2>
-    {{!-- <p>
-      {{!-- <span for="img" aria-label="money"></span> --}}
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p> --}}
-    <p>By {{article.user.user_name}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{article.art_body}}
-    </p>
-  </div>
+<div>
+    <div>
+        <h2>Posts</h2>
+    </div>
+    {{#each articles as |article|}}
+    <div class="card post-card">
+        <h3>{{title}}</h3>
+        <h4>Posted By: {{user.user_name}}</h4>
+        <p>{{art_body}}</p>
+    </div>
+    {{/each}}
 </div>
-{{/each}}
+{{!-- <div>
+    <div>
+        <h2>Posts</h2>
+    </div>
+
+</div> --}}
+{{!-- <div class="add-blog-post">
+    <h3>Create a new Post:</h3>
+    <form class="new-post-form">
+        <label for="post-name">
+            Author:
+        </label>
+        <br />
+        <input type="text" id="user_name" placeholder="username">
+        {{user_name}}
+        </input>
+        <br />
+         <label for="post-name">
+            Password:
+        </label>
+        <br />
+        <input type="text" id="password" placeholder="password">
+        {{password}}
+        </input>
+        <br />
+        <textarea name="post-text" id="post-text" cols="30" rows="10"></textarea>
+        <br />
+        <button type="submit" value="Submit">
+            Submit
+        </button>
+    </form>
+
+</div> --}}
+<!-- This is the form for adding a new user -->
+{{!-- <script src='/js/add-user.js'></script> --}}
