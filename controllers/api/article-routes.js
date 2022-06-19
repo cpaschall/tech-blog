@@ -43,7 +43,7 @@ router.get("/", async (req, res) => {
     // find all users
     try {
       const articleData = await Article.findAll({
-        attributes: ["id", "title", "art_body"],
+        attributes: ["id", "title", "art_body", "date_created"],
       });
       res.json(articleData);
     } catch (error) {
