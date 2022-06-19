@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Article } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
+// const {format}
+
 
 // router.post('/', withAuth, async (req, res) => {
 router.post('/', async (req, res) => {
@@ -36,5 +38,18 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get("/", async (req, res) => {
+    // find all users
+    try {
+      const articleData = await Article.findAll({
+        attributes: ["id", "title", "art_body"],
+      });
+      res.json(articleData);
+    } catch (error) {
+      res.status(400).json({ message: "Server is down" });
+    }
+  });
+
 
 module.exports = router;
