@@ -2,7 +2,7 @@ const router = require('express').Router();
 const User = require('../../models/User');
 const withAuth = require('../../utils/auth')
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
       const userData = await User.create({
                 user_name: req.body.user_name,
@@ -83,7 +83,7 @@ router.get("/", async (req, res) => {
     }
   });
 
-  router.post('/logout', (res,req) =>{
+  router.post('/logout', (res,req) => {
     if(req.session.logged_in) {
       req.session.destroy(() =>{
         res.status(204).end();
