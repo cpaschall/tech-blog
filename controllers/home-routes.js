@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
 });
 
 // get 1 article
-router.get('/article/:id', async (req, res) => {
+router.get('/article/:id', withAuth, async (req, res) => {
     try {
       const articleData = await Article.findByPk(req.params.id, {
         include: [
@@ -77,7 +77,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
     // If the user is already logged in, redirect the request to another route
     // if (req.session.logged_in) {
     //   res.redirect('/profile');
