@@ -4,15 +4,11 @@ const withAuth = require('../../utils/auth')
 
 router.post('/', withAuth, async (req, res) => {
     try {
-<<<<<<< HEAD:controllers/api/userRoutes.js
-      const userData = await User.create(req.body);
-=======
       // const userData = await User.create({
       //           user_name: req.body.user_name,
       //           password: req.body.password
       //         });
-      const userData = await User.create(req.bod);
->>>>>>> 989d60371d8f642937294bf070f4f77c49847226:controllers/api/user-routes.js
+      const userData = await User.create(req.body);
   
       req.session.save(() => {
         req.session.user_id = userData.id;
