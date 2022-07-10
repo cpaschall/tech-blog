@@ -7,7 +7,7 @@ async function newFormHandler(event) {
         body: JSON.stringify({
             title,
             art_body,
-            date_created
+            // date_created
         }),
         headers: {
             'Content-Type': 'application/json'

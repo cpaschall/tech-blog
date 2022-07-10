@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 
 // router.post('/', withAuth, async (req, res) => {
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newArticle = await Article.create({
             ...req.body, 
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 });
 
 // router.delete('/:id', withAuth, async (req, res) => {
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const articleData = await Article.destroy({ 
             where: {
@@ -39,7 +39,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
     // find all users
     try {
       const articleData = await Article.findAll({

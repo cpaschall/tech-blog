@@ -1,0 +1,7 @@
+sequelize
+dotenv
+jawsDB
+mysql2
+nodemon
+
+heroku
